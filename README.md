@@ -2,10 +2,16 @@
 
 ## Project Details  
 
+1. De novo assembly   
+	1. Flye assembler
+2. De novo assembly after self correction  
+	1. Canu self correction
+	2. Assembly  
+
 
 ## Data  
 
-Data was downloaded 
+Data was downloaded. This data was produced from the the RS-II PacBio sequencer.  
 
 ```
 └── raw_data
