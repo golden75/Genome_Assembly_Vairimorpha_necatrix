@@ -29,4 +29,34 @@ Data was downloaded. This data was produced from the the RS-II PacBio sequencer.
     └── m160604_085002_42146_c101015.textClipping  
 ```  
 
+## 1. De novo assembly  
+In prior to the de novo assembly using Flye, the pacbio reads needed to be converted into `fasta` format. This was done using the [**pbh5tools**](https://github.com/PacificBiosciences/pbh5tools/blob/master/doc/index.rst) provided by the pacificbiosciences.  
+After cloning the git the tool was installed using:  
+```bash
+git clone https://github.com/PacificBiosciences/pbh5tools.git  
+cd pbh5tools/ 
+python setup.py install --user 
+```  
 
+Then after exporting the path, the pacbio reads was converted into simple fasta format:  
+```bash 
+bash5tools.py --outFilePrefix necatrix --outType fasta --readType subreads m160604_085002_42146_c101015812550000001823231610211624_s1_p0.bas.h5  
+```   
+
+This created a fasta file 
+```
+raw_data/
+└── necatrix.fasta
+```  
+
+
+After that using [Flye](https://github.com/fenderglass/Flye), assembled the genome using: 
+```bash
+module load flye/2.3.7
+
+flye --pacbio-raw ../raw_data/necatrix.fasta --out-dir out_pacbio --genome-size 5m --threads 32 
+```  
+
+The full script can be found is called [flye_assembly.sh](/flye_assembly/flye_assembly.sh).  
+
+  
