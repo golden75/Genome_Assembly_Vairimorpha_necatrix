@@ -59,4 +59,54 @@ flye --pacbio-raw ../raw_data/necatrix.fasta --out-dir out_pacbio --genome-size 
 
 The full script can be found is called [flye_assembly.sh](/flye_assembly/flye_assembly.sh).  
 
+
+This created output folder called **out_pacbio** inside the flye_assembly folder:  
+```
+flye_assembly/
+├── flye_assembly.sh
+├── out_pacbio
+│   ├── 0-assembly
+│   │   └── draft_assembly.fasta
+│   ├── 1-consensus
+│   │   ├── consensus.fasta
+│   │   └── minimap.sam
+│   ├── 2-repeat
+│   │   ├── contigs_stats.txt
+│   │   ├── graph_before_rr.fasta
+│   │   ├── graph_before_rr.gv
+│   │   ├── graph_final.fasta
+│   │   ├── graph_final.gfa
+│   │   ├── graph_final.gv
+│   │   ├── graph_paths.fasta
+│   │   ├── repeats_dump.txt
+│   │   └── scaffolds_links.txt
+│   ├── 3-polishing
+│   │   ├── bubbles_1.fasta
+│   │   ├── consensus_1.fasta
+│   │   ├── contigs_stats.txt
+│   │   ├── edges_aln.sam
+│   │   ├── minimap_1.sam
+│   │   ├── polished_1.fasta
+│   │   ├── polished_edges.fasta
+│   │   └── polished_edges.gfa
+│   ├── assembly_graph.gfa
+│   ├── assembly_graph.gv
+│   ├── assembly_info.txt
+│   ├── flye.log
+│   ├── params.json
+│   └── scaffolds.fasta
+```  
+
+According to the the log file the the Assembly statistics:  
+```
+        Total length:   13778586
+        Contigs:        448
+        Scaffolds:      447
+        Scaffolds N50:  95818
+        Largest scf:    456221
+        Mean coverage:  27  
+```  
+
+Where the final assebley is called the **scaffolds.fasta** and the assembly information is in [assembly_info.txt](/flye_assembly/out_pacbio/assembly_info.txt) file.  
+
   
