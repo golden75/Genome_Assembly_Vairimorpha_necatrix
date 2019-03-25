@@ -171,3 +171,12 @@ flye_assembly/
 Where the final assebley is called the scaffolds.fasta and the assembly information is in [assembly_info.txt](/flye_assembly/subreads_out_pacbio/assembly_info.txt).  
 
 
+De novo assembly using Canu
+
+Canu specializes in assebling PacBio or Oxford nanopore sequences. 
+Canu operates in 3 phases:  
+1. correction   
+2. trimming   
+3. assembly   
+
+
